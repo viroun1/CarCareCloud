@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Maintenance History</h2>
+
+<table>
+    <tr>
+        <th>Service</th>
+        <th>Date</th>
+        <th>Mileage</th>
+        <th>Cost</th>
+        <th>Notes</th>
+    </tr>
+
+    {% for m in logs %}
+    <tr>
+        <td>{{ m[2] }}</td>
+        <td>{{ m[3] }}</td>
+        <td>{{ m[4] }}</td>
+        <td>${{ m[5] }}</td>
+        <td>{{ m[6] }}</td>
+    </tr>
+    {% endfor %}
+</table>
+
+{% endblock %}

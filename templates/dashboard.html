@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Your Dashboard</h2>
+
+<h3>Weather Recommendations</h3>
+<div class="card">
+    <p><strong>Temperature:</strong> {{ weather.temp }}°F</p>
+    <p><strong>Condition:</strong> {{ weather.condition }}</p>
+</div>
+
+<h3>Your Vehicles</h3>
+
+<a class="button" href="/add_vehicle">Add Vehicle</a>
+
+{% if vehicles %}
+    <ul>
+    {% for v in vehicles %}
+        <li class="card">
+            <strong>{{ v[2] }} {{ v[3] }} ({{ v[4] }})</strong><br>
+            Mileage: {{ v[5] }} miles<br>
+            <a class="small-btn" href="/add_maintenance/{{ v[0] }}">Add Maintenance</a>
+            <a class="small-btn" href="/maintenance_history/{{ v[0] }}">View History</a>
+        </li>
+    {% endfor %}
+    </ul>
+{% else %}
+    <p>No vehicles added yet.</p>
+{% endif %}
+
+{% endblock %}

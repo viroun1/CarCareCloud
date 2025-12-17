@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h2>Add a New Vehicle</h2>
+
+<form method="POST">
+    <label>Make:</label>
+    <input type="text" name="make" required>
+
+    <label>Model:</label>
+    <input type="text" name="model" required>
+
+    <label>Year:</label>
+    <input type="number" name="year" required>
+
+    <label>Mileage:</label>
+    <input type="number" name="mileage" required>
+
+    <button type="submit">Save Vehicle</button>
+</form>
+
+{% endblock %}
